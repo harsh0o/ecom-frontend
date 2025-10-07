@@ -8,6 +8,7 @@ import {
   LogOut,
   ChevronLeft,
   ChevronRight,
+  Upload,
 } from "lucide-react";
 import UserFormModal from "../../layout/UserFormModal";
 import DeleteModal from "../../layout/DeleteModal";
@@ -134,6 +135,10 @@ const Users = () => {
     );
   }
 
+  const rediredtToImageUpload = () => {
+    navigate("/images");
+  }
+
   return (
     <div className="min-h-screen bg-black">
       <header className="bg-neutral-900 border-b border-gray-800 shadow-lg">
@@ -142,6 +147,13 @@ const Users = () => {
             <h1 className="text-3xl font-bold text-orange-500">
               User Management
             </h1>
+             <button
+              onClick={rediredtToImageUpload}
+              className="flex items-center gap-2 px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors font-semibold"
+            >
+              <Upload size={20} />
+              Image upload
+            </button>
             <button
               onClick={handleLogout}
               className="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors font-semibold"
